@@ -1,0 +1,572 @@
+/* CSS Document */
+
+
+/* 	Overflow: Hidden; --> fixes clear problem across most browser tested... I didn't use the original "auto" property becuase if the contributor adds to much content it adds scrollbars...
+		I didn't use clearfix becuase of IE 7 */
+
+/* 	I used this on the nav1 bar it seems to work ok in all browsers tested... and removes the need to use extra condition for IE 6
+		This ensures a container clears a floating element  */
+		
+.clearfix:after {content: ".";	display: block;	height: 0; clear:both; visibility: hidden;}
+/*.clearfix {display: inline-block;}*/
+
+/* Hides from IE-mac\*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+
+
+/* Centers page in IE6/HTML 4.01 */
+body { background:#fff; margin:0px; padding:0px;	font-family:arial, sans-serif; font-size:11px;	color:#4c4c4c;	text-align:center;}
+
+/* Eliminate cascade of text-align-center to center page in IE6/HTML 4.01 */
+div {text-align:left; }
+
+/* IE 5.5 and lower sets a defualt font size */
+table {font-size:11px;}
+
+/* zeros out margins on the ASP.NET Form Tag (oprea applies a defualt margin on form tags wich was cuasing a white space gap on the top of the page) */
+form {margin:0px;}
+
+img {border:0;}
+
+a {color:#009AC8; text-decoration:none;}	
+a:hover {color:#B31B34;} 
+
+h1 {margin:0px; padding:0px; font-size:21px; color:#4c4c4c;}
+h2 {color:#EC891D; font-size:16px; font-weight:normal; margin:0; padding:0;}
+h3 {font-weight:bold; font-size:12px; margin:0; padding:0;}
+h4 {font-size: 11px; margin:0; padding:0;}
+h5 {font-size: 10px; text-transform:uppercase;	margin:0;	padding:0; }
+
+h3,
+h4,
+h5 {color: #666; font-weight: bold;}
+
+p {margin:0; padding:0 0 16px 0;}
+
+td {vertical-align:top;}
+/* background:#fff url("/images/template/border.gif") repeat-x top center; */
+
+div.callToAction {background:#fff url("/images/template/border.gif") repeat-x top center; padding:11px 0 0px 0px;}
+
+.left {float:left;}
+.right {float:right;}
+.buttonName {float:left;}
+
+textarea,
+input {font-family:arial, sans-serif; font-size:11px;	color:#4c4c4c;}
+
+/* CONTAINERS ==================================================================================================== */
+/* Center page in XHTML */
+div#container {position:relative;	width:770px;	padding:0;	margin-left:auto; 	margin-right:auto; background:#fff url("http://www.serena.com/images/template/bg.gif") repeat-y top center;}	
+div#page { width:760px;	padding:0 0 10px 0;	margin:0 0 0 5px; border:1px none red;}
+div#page:after {content: ".";	display: block;	height: 0; clear:both; visibility: hidden;}
+
+/* Hides from IE-mac \*/
+* html div#page {height: 1%;}
+/* End hide from IE-mac */
+
+/* TEMPLATE HEADER ==================================================================================================== position:relative;*/
+
+/* Overflow: Hidden fixes clear problem across all browser... I didn't use auto becuase if the contributor adds to much content it adds scrollbars */
+div.toolbar {background:#f5f5ed url("http://www.serena.com/images/template/bgToolbar.gif") no-repeat 0 0; border-bottom:1px solid #C5C1A0; height:49px;}
+div.serenaLogo {float:left; margin:0; padding:12px 0px 12px 20px;} 
+
+div.toolbarNav {float:left; padding:16px 0 0 30px; margin:0px;}
+div.toolbarNav ul {padding:0px; margin:0px; list-style:none;}
+div.toolbarNav ul li {position:relative; float:left; list-style:none;	padding:0 15px 0 15px;	margin:0;	background:url("http://www.serena.com/images/template/dividerToolbar.gif") no-repeat 100% 2px; }
+/* IE 5.0 did not like padding on a tag not set as block*/
+div.toolbarNav ul li a {color:#666;	text-decoration:none;	padding:0;}
+div.toolbarNav ul li a:hover {color:#b31b1b;}
+
+div.dropdown select {margin-top:2px; color:#666; }
+div.dropdown select.netscape {font-size:11px; color:#666; padding-top:2px; padding-bottom:0px; height:16px; margin-top:2px; }
+div.dropdown select.netscape option {padding:0px; padding-bottom:2px;}
+div.dropdown select.opera {padding:4px; margin-top:2px; border:1px solid #666; background-color:#FFFFFF;}
+
+div.countrySelector {float:left; padding:12px 0 0 14px;}
+
+div.dropdown {position:relative; display:block;	width:110px; height:20px;	margin:0;	padding:2px 0 0 6px;	cursor: pointer;	border:0;	background: url("/images/template/bg-dropdown.gif") no-repeat 0 0; z-index:2; }
+div.dropdown#productsByNeed {z-index:3; width:150px;}
+div.dropdown#productsByPlatform {width:150px;}
+
+div.dropdown label {padding-top:1px; display:block;}
+div.dropdown img.ddButton {position:absolute;	right:0; top:0;	z-index:2;}	
+div.dropdown#productsByNeed {z-index:3;}
+
+div.dropdown ul,
+div#body div.dropdown ul {position:absolute;	z-index:3; top:0;	left:0;	background:#fff;	border:1px solid #9B9B9B;	display:none;	margin:0;	padding:0;}
+
+div#selectCountry ul {width:95px;}
+
+div#productsByNeed ul,
+div#productsByPlatform ul {width:135px;}
+
+div.dropdown#productsByNeed br.clearfix {position:absolute; z-index:3; display:none;	}
+
+/* for Internet Explorer */
+div.dropdown ul li,
+div#body div.dropdown ul li {list-style:none; display:block;	margin:0;	padding:0;	height:1%;}
+div.dropdown ul li.firstItem,
+div#body div.dropdown ul {padding-top:1px;}
+div.dropdown ul li a {display:block; color:#666; padding:1px 5px 3px 5px;	margin:0;}
+div.dropdown ul li:hover {background:#32ADD2;}
+div.dropdown ul li:hover a {color:#fff;}
+div.dropdown ul a:hover {background:#32ADD2; color:#fff;}
+
+
+div.search {float:right; margin:0; padding:14px 20px 0 0;}
+div.search input.searchField {width:103px;	margin:0;	padding:1px 0 0 5px; font-size:11px; color:#666; vertical-align:top;}
+div.search input.searchSubmit {width:22px; height:20px;	padding:0; margin:0; vertical-align:top;}
+
+
+/* NAV 1 BAR ==================================================================================================== */		
+div.nav1 {background:#f5f5ed url("http://www.serena.com/images/template/bgNavHome.gif") no-repeat 0 0;	margin:0 0 10px 0;	padding:0 20px 0 12px;	border-top:1px solid #fff;	border-bottom:1px solid #C5C1A0; overflow:hidden;} 
+/*div.nav1:after {content: ".";	display: block;	height: 0; clear:both; visibility: hidden;}*/
+
+/* IE 6, 5.5 & 5 this ensures the height of the Nav 1 bar   \*/
+* html div.nav1 {height: 31px;}  
+/* To see Nav 1 fix for IE-mac see main3.js lines 13 - 18 */
+/* To see Nav 1 fix for Netscape-mac see main3.js lines 19 - 22 */
+
+div.nav1 ul {margin:0;	padding:0;}
+div.nav1 ul li {float:left;	list-style:none; margin:0;	padding:0;}
+div.nav1 ul li a {padding: 8px 10px 9px;	display: block;	text-decoration:none;	font-weight:bold;	color:#b31b1b;} 
+div.nav1 ul li.on,
+div.nav1 ul li.onNoHover {background: url("/images/template/nav-bg-l.gif") no-repeat 0 0;}
+div.nav1 ul li.on a,
+div.nav1 ul li.onNoHover a {background: url("/images/template/nav-bg-r.gif") no-repeat top right; color:#000;}
+div.nav1 ul li:hover {background: url("/images/template/nav-bghover-l.gif") no-repeat 0 0;}	
+div.nav1 ul li.onNoHover:hover {background: url("/images/template/nav-bg-r.gif") no-repeat 0 0;}
+div.nav1 ul li a:hover {background: url("/images/template/nav-bghover-r.gif") no-repeat top right;}		
+div.nav1 ul li.onNoHover a:hover {background: url("/images/template/nav-bg-r.gif") no-repeat top right;}	 
+
+ 
+/* COLUMN 1 / NAV 2 BAR =========================================================================================== */		
+/*div#ctl00_PrimaryBody_column1Id,
+div#column1 {padding:32px 0px 32px 10px; margin:0; border:1px solid red;}*/
+
+/* If 1 then the left nav is on and floats left -- if 0 then the left nav turns off */
+.nav2_0 {display:none;  border:1px solid red;}
+.nav2_1 {float:left; padding:32px 0px 32px 10px; margin:0;  border:1px none green; } 
+
+/* Parent Buttons */
+div.nav2_1 ul {width:124px; margin:0; padding:5px 0 0 0; border-top:2px solid #ccc; }
+div.nav2_1 ul li {list-style:none;	padding:5px 0 5px 0; text-transform:capitalize; }
+div.nav2_1 ul li.open a,
+div.nav2_1 ul li a {color:#666;	text-decoration:none;}
+div.nav2_1 ul li.open a:hover,
+div.nav2_1 ul li a:hover {color:#009AC8;}
+div.nav2_1 ul li.open {}		
+/*if open and want arrow -- background: url("/images/template/nav2Arrow.gif") no-repeat */
+
+div.nav2_1 ul li.on a {color:#000;}
+
+/* Child Buttons */
+div.nav2_1 ul li ul {width:124px; margin:5px 0; padding:0; border-top:0 none; display: block; background:#edefee url("/images/template/nav2Child.gif") no-repeat bottom;}
+div.nav2_1 ul li ul li {list-style:none;	padding:0; text-transform:capitalize; padding:5px 0 5px 10px; background:url("/images/template/nav2Child.gif") no-repeat 0 0; }		
+div.nav2_1 ul li ul li.on {background:#fff url("/images/template/nav2ChildOn.jpg") no-repeat 0 0; font-weight:bold;}
+div.nav2_1 ul li ul li.on a {color:#000;}
+div.nav2_1 ul li ul li.on a:hover {color:#000;}
+
+/* MAIN TEMPLATE =========================================================================================== */	
+
+/* If 1 then the left nav is on and floats left -- if 0 then the left nav turns off */
+
+/* Left Nav Off */
+.col2_0 {width:736px; border-top:1px solid #fff; border:1px none red; padding:0 0 32px 21px; }
+
+/* Left Nav On */
+.col2_1{width:606px; float:left; padding:0 0 32px 16px; border:1px none red;}   
+
+
+/* Bread Crumb ------------------------------------------------------------- */
+div.breadcrumb {float:left;}
+div.breadcrumb a {color:#999;	text-decoration:none;} 
+div.breadcrumb a:hover {color:#009ac8;}
+
+div.breadcrumb ul {margin:0px; padding:0;}
+div.breadcrumb ul li {float:left;	list-style:none; margin:0; padding:0;}
+div.breadcrumb ul li.divider {margin:0 8px 0 8px;	padding:0; color:#999;}
+
+/* Tools -- IE: Print, Share Contact,  --------------------- */
+div.tools {float:right; padding:0 10px 0 0}
+div.tools ul {margin:0;	padding:0;}
+div.tools ul li {float: left;	list-style: none;	margin:0 0 0 5px; }
+/* Needed to set as block element for IE 5.0 */
+div.tools a {color: #999;	text-decoration: none;	padding: 0 10px 0 15px; display:block;}
+div.tools a:hover {color:#009ac8;}	
+
+div.tools li.print a {background:url("http://www.serena.com/images/template/iconPrint.gif") no-repeat left; }
+div.tools li.share a {background:url("http://www.serena.com/images/template/iconShare.gif") no-repeat left;}
+div.tools li.contact a {background: url("http://www.serena.com/images/template/iconContact.gif") no-repeat left; padding-right: 0;}
+
+
+/* Body Main Template ------------------------------------------------------------- */
+div#body {clear:both; padding:14px 10px 0 0;}
+
+/* Bullets */
+div#body ul {margin:0px; padding:0 0 16px 0; list-style:none; }
+div#body ul li {margin:0px; padding:0px 0 6px 18px; background: url("http://www.serena.com/images/template/bullet.gif") no-repeat 6px 4px;}
+div#body div.dropdown ul li {background:none;}
+
+
+div#body table.bodyLayout1,
+div#body table.bodyLayout2 {padding:0; margin:8px 0 0 0;} 
+
+div#body table tr td.templateHeight {width:1px;}
+div#body table tr td.templateHeight img {height:354px; width:1px}
+
+
+div#body table.bodyLayout1 tr td.column1,
+div#body table.bodyLayout2 tr td.column1 {vertical-align:top; padding: 0 16px 0 0;}
+
+
+div#body table.indexTable {clear:both; border-top:4px solid #ccc; border-bottom:2px solid #ccc; border-collapse:collapse; margin:0 0 5px 0;}
+div#body table.indexTable th {text-align:left; padding:5px 8px 10px 8px;}
+div#body table.indexTable p {margin-top:0 !important; padding:0 !important;}
+div#body table.indexTable tr.gray {background-color:#e5e8e8; background: #e5e8e8 url("/images/template/tr_gray_border.gif") repeat-x top left;}
+div#body table.indexTable tr.white {background: url("/images/template/tr_white_border.gif") repeat-x top left;}
+div#body table.indexTable td {padding:8px 8px 16px 8px;}
+ 
+ 
+/* Main Body Widths
+- Full page = 721px
+- 2 column (left nav) = 593px
+- 2 column (right nav) = 569px
+- 3 column = 421px
+
+/* bodyLayout1_0 = 1 column (just main body) */
+div.col2_0 table.bodyLayout1 tr td.column1 {width:721px; vertical-align:top; border:1px none green; }
+div.col2_0 table.bodyLayout1 tr td.column2 {width:170px !important; display:none; width:0px; vertical-align:top;}
+
+/* bodyLayout1_1 = 2 columns (Left bar & main content) */
+div.col2_1 table.bodyLayout1 tr td.column1 {width:593px; vertical-align:top; }
+div.col2_1 table.bodyLayout1 tr td.column2 {width:170px !important; display:none; width:0px; vertical-align:top;}
+ 
+/* bodyLayout2_0 = 2 columns (main content & right bar) */
+div.col2_0 table.bodyLayout2 tr td.column1 {width:569px; vertical-align:top; }
+div.col2_0 table.bodyLayout2 tr td.column2 {width:170px !important; border-left:1px solid #ccc; padding:0 0px 0 10px; vertical-align:top;}
+
+/* bodyLayout2_1 = Full Layout (left nav 2, main content & right bar) */
+div.col2_1 table.bodyLayout2 tr td.column1 {width:421px; vertical-align:top; overflow:hidden;}
+div.col2_1 table.bodyLayout2 tr td.column2 {width:170px !important; border-left:1px solid #ccc; padding:0 0px 0 10px; vertical-align:top;}
+ 
+
+div.simple {margin:0; padding:0 0 5px 0}
+div.simple p img {padding:15px 0 15px 0;}
+div.simple p img.border {padding:15px 0 15px 0; border:1px solid #ccc;}
+
+td.column1 h3, 
+div.simple h3 {padding-bottom:10px;}
+ 
+ 
+/* Tabs */
+div.tabBlock {padding:0 0 22px 0;}
+div.tabBlock h3 {padding:0 0 10px 0} 
+	
+div.tabBlock .TopGroup {padding-left:6px;	background-image: url("http://www.serena.com/images/template/tabs/bg.gif");} 
+div.tabBlock .DefaultTab {background-image: url("http://www.serena.com/images/template/tabs/tab_bg.gif"); cursor:pointer;}
+div.tabBlock .DefaultTabHover {color:#373737; background-image: url("http://www.serena.com/images/template/tabs/hover_tab_bg.gif"); cursor:pointer;}
+div.tabBlock .SelectedTab {color:black; background-image: url("http://www.serena.com/images/template/tabs/selected_tab_bg.gif"); cursor:pointer;}
+
+div.tabBlock table.MultiPage {vertical-align:top; margin:0px; padding:0px; background-color:#d5ecf4;  width:100%;}
+div.tabBlock table.MultiPage tr td {padding:12px 12px 0 12px; margin:0px; }
+
+div.tabBlock table.MultiPage tr td table tr td {padding:0px; margin:0px;}
+
+
+div.tabBlock {padding:0 0 22px 0;}
+div.tabBlock h3 {padding:0 0 10px 0;} 
+	
+div.tabBlock_ffffff .TopGroup {padding-left:6px;	background-image: url("http://www.serena.com/images/template/tabs/bg.gif");} 
+div.tabBlock_ffffff .DefaultTab {background-image: url("http://www.serena.com/images/template/tabs/tab_bg_ffffff.gif"); cursor:pointer;}
+div.tabBlock_ffffff.DefaultTabHover {color:#373737; background-image: url("http://www.serena.com/images/template/tabs/hover_tab_bg_ffffff.gif"); cursor:pointer;}
+div.tabBlock_ffffff .SelectedTab {color:black; background-image: url("http://www.serena.com/images/template/tabs/selected_tab_bg_ffffff.gif"); cursor:pointer;}
+div.tabBlock_ffffff table.MultiPage {vertical-align:top; margin:0px; padding:0px; background-color:#fff;}
+div.tabBlock_ffffff table.MultiPage tr td {padding:12px 12px 0 12px; margin:0px; }
+div.tabBlock_ffffff table.MultiPage tr td table tr td {padding:0px; margin:0px;}
+
+div.calloutRight {float:right; width:180px; margin:5px 0 10px 10px;}
+div.calloutLeft {float:left; width:180px; margin:5px 10px 10px 0;}
+
+div.calloutRight,
+div.calloutLeft {background:url("/images/template/quote-box-bkgrnd.jpg") repeat-x; padding:10px;  }
+
+div.calloutRight p,
+div.calloutLeft p {margin:0; padding:0; font-size:12px; line-height:20px; font-style:italic;  }
+
+div.calloutRight p.quoter,
+div.calloutLeft p.quoter {font-size:10px; margin:0!important; padding:0!important; text-align:left;  font-style:normal; font-weight:300;}
+
+table.column2Layout {clear:both;}
+
+table.column2Layout td.col1 {padding:0px 15px 0 0;}		
+
+table.column2Layout h3 {padding:0 0 8px 0;}
+table.column2Layout tr td ul {margin:0 !important; padding:0 0 8px 0 !important; }
+table.column2Layout tr td li {margin:0; padding:0; border:1px none #000;}
+
+
+
+/* LANDING TEMPLATE ================================================================================================== */	
+div.bodyLanding {clear:both; padding:14px 0 0 0; }
+div.bodyLanding div.billboard {}
+
+div.bodyLanding table {padding:0; margin:30px 0 0 2px; }
+div.bodyLanding td {padding:0 15px 0 0; border:1px none red;} 
+div.bodyLanding table.landingLayout1 td {width:721px;}
+div.bodyLanding table.landingLayout2 td {width:353px;}
+div.bodyLanding table.landingLayout3 td {width:244px;}
+div.bodyLanding table.landingLayout4 td {width:175px;}
+
+/*div.bodyLanding table.column4 td {width:175px;}
+div.bodyLanding table.column3 td {width:244px;}
+div.bodyLanding table.column2 td {width:266px;}*/
+
+div.bodyLanding td.landingHeight {width:1px !important;  padding:0 0 0 0  !important;}
+div.bodyLanding td.landingHeight img {height:200px; width:1px  !important;} 
+
+.bodyLanding h1 {text-transform:uppercase; font-size:14px; padding:0 0 8px 0;}
+
+/* did 2 variastions becuase contribution sometimes writes the html funny */
+.bodyLanding a h1,
+.bodyLanding h1 a {color:#009ac8; }
+
+.bodyLanding a:hover h1,
+.bodyLanding h1 a:hover {color:#B31B34;}
+
+.bodyLanding p {padding:0 0 6px 0;}
+
+.bodyLanding ul {padding:0 0 4px 0; margin:0; list-style:none;}
+.bodyLanding li {background:none; padding:0 0 4px 0; margin:0;}
+.bodyLanding li.bullet {margin:0px; padding:0px 0 6px 16px; background: url("http://www.serena.com/images/template/bullet.gif") no-repeat 6px 3px;}
+
+div.bodyLanding p.callToAction {background:#fff url("/images/template/border.gif") repeat-x top center; padding-top:6px; margin-top:4px;}
+
+
+/* PRODUCT LANDING TEMPLATE ================================================================================================== */	
+
+.bodyProduct  {clear:both; padding:22px 18px 0 0; border:1px none red;}
+
+/*Wheel --------- */
+.hide { display: none; } 
+
+#promo {position:relative; padding: 0px; margin:0;}
+#promo .wrapper {background:#96cc92 url(../images/products/g_background.jpg) repeat-x; min-height:97px; overflow:hidden; width:720px; }
+
+#wheel-ad {  /* position: absolute; top: 0; left: 0; z-index: 30; */ background: url("/images/products/g_wheel.gif") no-repeat; height: 97px; width: 720px;   }
+#wheel-ad h2 { display: none; }
+#wheel-ad h2, #wheel-ad a {text-indent:-9999em; overflow:hidden; margin:0; }
+#wheel-ad a {display:block; height:97px; outline:none; }
+
+#promo .isopen #wheel-ad { display: none; }
+
+#w-viewlink {display: block; height: 23px; background: url("/images/products/b_openview.gif") no-repeat; text-indent: -9999em; overflow: hidden; outline: none; width:720px; }
+a.closeview { background: url("/images/products/b_closeview.gif") no-repeat; }
+
+.bodyProduct table.bodyLayout2 {border-collapse:collapse; margin: 30px 0 0 4px;}
+.bodyProduct table.bodyLayout2 td.col_1 {width:518px; padding:0 26px 0 0;}
+.bodyProduct table.bodyLayout2 td.col_2 {width:201px; border-left:1px solid #cccccc;  padding:2px 0 0 16px;}
+
+.bodyProduct .productIndexHeader {float:left; padding:0 0 10px 0;}
+.bodyProduct .productIndexHeaderLink {float:right; padding:2px 14px 10px 0;}
+
+table.productIndexTable {clear:both; border-top:4px solid #ccc; border-bottom:2px solid #ccc; border-collapse:collapse; width:519px; margin:0 0 5px 0;}
+
+.tabBlock_ffffff table.productIndexTable {width:540px; margin-top:20px;}
+
+table.productIndexTable th {text-align:left; padding:5px 5px 10px 0;}
+table.productIndexTable p {margin-top:0 !important; padding:0 !important;}
+table.bodyLayout2 td.col_2 h4 {padding:0 0 10px 0;}
+table.bodyLayout2 td.col_2 select {padding:0; margin:0 0 10px 0; width:155px;}
+table.productIndexTable tr.gray {background-color:#e5e8e8; background: #e5e8e8 url("/images/template/tr_gray_border.gif") repeat-x top left;}
+table.productIndexTable tr.white {background: url("/images/template/tr_white_border.gif") repeat-x top left;}
+table.productIndexTable th.col1, 
+table.productIndexTable td.col1 {padding-left:5px;}
+table.productIndexTable td.col1 {width:150px; font-weight: bold; color: #009AC8; padding: 8px 5px 16px 5px;	}
+table.productIndexTable td.col2 {width:150px; padding:8px 8px 16px 0; }
+table.productIndexTable td.col3 {width:218px; padding:8px 6px 16px 0;}
+
+.productDropDown {padding:0 0 8px 0; z-index:3;}
+.enviromentDropDown {padding:0 0 8px 0; z-index:2;}
+
+
+/* Tour TEMPLATE ================================================================================================== */	
+div#tour {clear:both; padding:14px 22px 0 0; border: 1px none red;}
+div#tour h1 {padding-bottom:10px;}
+
+/* Partner TEMPLATE ========================*/
+#partnerLogoWrap {float:right;}
+
+
+/* COLUMN 3 / RIGHT BAR =========================================================================================== */
+
+/* Promo */
+div.promoRegion {width:160px; background:url("/images/template/border.gif") repeat-x bottom; padding:10px 0 10px 0; }
+.bodyProduct div.promoRegion {width:160px; background:url("/images/template/border.gif") repeat-x top; padding:12px 0 10px 0; }
+.bodyProductIndex div.promoRegion {padding:11px 0 10px 0;}
+
+/* FAQ */
+div.faq {width:160px; background:url("/images/template/border.gif") repeat-x bottom; padding:0 0 10px 0;}
+div.faq h3 {padding:5px 0 5px 0; margin:0px; border:1px none red;} 
+div.faq #faqNav {background:url("/images/template/border.gif") repeat-x top; margin:0px; height:12px;}
+div.faq #faqNav a.next{float:right; border:1px none red; padding:4px 0 4px 0;}
+div.faq #faqNav a.prev{float:left; border:1px none red; padding:4px 0 4px 0;}
+
+div.faq #faqBody {background:url("/images/template/border.gif") repeat-x top; padding:2px 0 2px 0; clear:both;}
+div.faq #faqBody h5 {text-transform:none; padding:7px 0 3px 0; font-size:11px;}
+
+div.faq #faqBody,
+div.faq #faqBody p,
+div.faq #faqBody ul, 
+div.faq #faqBody ul li {font-size:11px; line-height:15px;}
+
+div.faq #faqContent {padding:0 0 10px 0;}
+
+div.faq #faqBody p {padding:0 0 3px 0;}
+
+div.faq #faqBody ul {margin:0; padding:0 0 3px 0;}
+div.faq #faqBody ul li {margin:0px; padding:0 0 0 12px; background-position:4px 5px; }
+
+/* -------------------- */
+div.rollout {padding:0; margin:0;}
+
+td.column2 	div.getSupportRegion {width:160px; padding:10px 0 10px 0; background:url("/images/template/border.gif") repeat-x bottom;}
+
+div.rollout div.rollOutContent {padding:6px 6px 0px 6px;	margin:0; color:#666; display:none; overflow:hidden;}
+div.rollout div#getSupport_Content {background:#ec891d url("/images/template/bgGetSupport2.gif") repeat-x;}
+
+div.rollout div#faqRollout_Content {background:#069CC9 url("/images/template/bgAskAQuestion.gif") repeat-x;}
+
+
+div.rollout p {color:#fff; padding:0 0 6px 0 !important; margin:0!important;}
+
+div.rollout a {color:#fff;}
+div.rollout a:hover {color:#fff; font-weight:700;}
+div.rollout input.text {margin:0 0 6px 0 !important;}
+div.rollout input.text#username_display {float:left; width:65px;}
+div.rollout input.text#password_display {float:left; width:65px; margin-left:5px !important;}
+div.rollout input#askEmail {width:142px;	margin:2px 0 2px 0;}
+div.rollout textarea {width:142px;	height:50px; font-size:11px; margin:5px 0 2px 0;	padding:1px;} 
+div.rollout input.select {margin:0 0 6px 0 !important;}
+div.rollout input.button {margin:0 0 6px 0 !important;}
+div.rollout input#submitQuestion {margin:2px 0 4px 0;}
+div.rollout .dropdown a:hover {color:#fff; font-weight:100;}
+
+
+table.bodyLayout1 td.column2 div.askQuestionBody textarea,
+table.bodyLayout1 td.column2 div.askQuestionBody input#askEmail,
+table.bodyLayout2 td.column2 div.askQuestionBody textarea,
+table.bodyLayout2 td.column2 div.askQuestionBody input#askEmail {width:135px;}
+
+/* Learn More */
+div.learnMore,
+div.eval {padding:8px 0 15px 0; }
+
+div.learnMore{background:url("/images/template/border.gif") repeat-x bottom;}
+
+div.learnMore h3,
+div.eval h3 {padding:0 0 5px 0;}
+div.learnMore h4
+div.eval h4 {padding:0;}
+div.learnMore p, 
+div.eval p {padding:0 0 6px 0;}		
+
+
+/* FOOTER =========================================================================================== */	
+div#footer {width:770px; height:24px; padding:2px 0 0 0; margin-left:auto; margin-right:auto;	background:#E7E4D2 url("http://www.serena.com/images/template/bgFooter.gif") no-repeat top center;	}
+div#footer ul {position:relative;	margin:0 0 0 20px; padding:0;}
+div#footer ul li {float:left;	list-style:none;}
+div#footer ul li.divider {background:url("http://www.serena.com/images/template/dividerFooter.gif") no-repeat center 5px; padding:0 12px 0 12px;	}
+div#footer ul li a {color:#666;	text-decoration:none;	line-height:160%;	}
+div#footer ul li a:hover {color:#b31b1b;}
+
+
+/* LEGAL =========================================================================================== */
+div#legal {clear:both;	width:740px; padding:5px 0 1em 0;	margin-left:auto;	margin-right:auto; color:#666;}
+div#legal .copyright {float:left;}
+div#legal .powered {float:right;} 
+
+
+
+/* HOME PAGE =========================================================================================== */
+#billboardContent {display:none;}
+.billboardNoFlash {width:760px; height:234px;}
+.billboardNoFlash  .headlineRegion1 {padding:76px 0 0 20px; float:left;}
+.billboardNoFlash  .headlineRegion2 {padding:50px 0 0 20px; float:left;}
+.billboardNoFlash p.headline {margin:0 0 0 0; padding:0 0 6px 0;}
+.billboardNoFlash p.headline font {line-height:25px; margin:0; padding:0 0 6px 0; font-size:30px;font-family:Arial Narrow, Arial, Helvetica, sans-serif;font-weight:800;}
+.billboardNoFlash p.subHeader {line-height:15px; font-size:12px; font-weight:300; color:#000000; margin:0px; padding:0 0 0 0px;}
+.billboardNoFlash .headlineRegion1 p.subHeader {padding:0 0 0 2px;}
+.billboardItems {text-align: right; padding:50px 0 0 30px; float:right;}
+.billboardItems ul {text-align:left;margin:0 4px 0 0; padding:0;list-style:none; width:185px;}
+.billboardItems ul li {background:url("/images/template/dividerHome.gif") repeat-x bottom; margin:0; padding:6px 0 6px 3px; width:183px; display: block;}
+.billboardItems ul li a {text-transform: uppercase;}
+.billboardItems ul li a#billboardItem1,
+.billboardItems ul li a#billboardItem2, 
+.billboardItems ul li a#billboardItem3 {color:#000;}
+.billboardItems ul li a#billboardItem0 {font-weight:500;color:#5261AC;}
+.billboardItems ul li a#billboardItem0:hover {font-weight:500;color:#5261AC;}
+.billboardItems ul li a#billboardItem0:visited {font-weight:500;color:#5261AC;}
+
+div.toolbarHp {background:#f5f5ed url("http://www.serena.com/images/template/bgToolbar.gif") no-repeat 0 0; border-bottom:1px none #C5C1A0; height:36px; padding:0px;} 
+div.toolbarHp div.toolbarNav {padding:11px 0 0 0;} 
+div.toolbarHp div.countrySelector {padding-top:7px;}
+div.toolbarHp div.search {padding-top:8px;}
+
+div.bodyHome {clear:both; padding:18px 0 0 0;  }
+div.bodyHome h1 {text-transform:uppercase; font-size:14px; padding:0 0 10px 0;}
+div.bodyHome p {padding:0 0 8px 0;}
+div.bodyHome table {table-layout:fixed; }
+div.bodyHome table td { padding:0 30px 0 0;}
+div.bodyHome table td.column1 {width:291px;}
+div.bodyHome table td.column2 {width:198px;}
+div.bodyHome table td.column3 {width:161px; padding:0 17px 0 11px; border-left:1px solid #ccc;}
+div.bodyHome table td.column3 h4 {margin-bottom:6px; margin-top:6px;}  
+div.bodyHome table td.column3 select {width:150px!important;}
+
+div.bodyHome td.landingHeight {width:1px !important;  padding:0 !important;}
+div.bodyHome td.landingHeight img {height:150px; width:1px  !important;} 
+div.bodyHome table td.column1 ul {padding:0; margin:0; list-style:none;}
+div.bodyHome table td.column1 ul li {margin:0; padding:0 0 0 16px; background: url("http://www.serena.com/images/template/bullet.gif") no-repeat 6px 4px;}
+div.bodyHome table td.column1 img.left {padding:2px 10px 4px 4px;} 
+div.bodyHome table td.column1 img.right {padding:2px 10px 4px 4px;} 
+
+div.expandable {padding:0; margin:0 0 1em 0; position:relative;	clear:both; border:1px solid #fff; }
+div.expandable:after {content: ".";	display: block;	height: 0; clear:both; visibility: hidden;}
+
+/* Hides from IE-mac\*/
+* html div.expandable {height: 1%;}
+/* End hide from IE-mac */
+
+div.expandable a.button0,
+div.expandable a.button1 {display:block;	position:relative;	margin:0 0 5px 0;	padding:0 0 0 26px;	background:url("/images/buttons/buttonOpen.gif") no-repeat 0 0;}
+
+div.expandable a.button1 {background:url("/images/buttons/buttonClose.gif") no-repeat 0 0;}
+
+div.expandable div.detail0,
+div.expandable div.detail1 {float:left; padding:0 0 10px 26px;	margin:0 0 10px 0;	background:url("/images/template/border.gif") repeat-x bottom left;}
+
+div.expandable div.detail0 {display:none !important;}
+div.expandable div.detail1 {display:block;} 
+
+/* BEGIN */
+.divWindow {position:absolute; text-align:center; display: none; border: 1px solid #999; background-color:#fff;	font-size: 1px;	overflow:hidden;}
+.divHeader {height: 15px;	font-size: 1px;	background-image: url("/images/buttons/buttonImageBg.gif");}
+.dhRight {height: 15px;	width: 15px; font-size: 1px; float: right; background-image: url("/images/buttons/buttonImageClose.gif");	margin-right: 5px;	background-repeat: no-repeat;	background-position: 0px 0px;	cursor:pointer;}
+.dhRight:hover {background-repeat: no-repeat;	background-image: url("/images/buttons/buttonImageClose.gif");	background-position: 0px -15px;	font-size: 1px;}
+.divIframe{text-align:center;	width:100%;	height:100%; font-size: 1px;}
+.dhLeft {height: 15px;	width: 15px; background-color: #FF00FF;	font-size: 1px;	float: left;}
+ /*  */
+ 
+ /* BUBBLE BEGIN
+Top Link Bubble Tip */  
+div#bubble_tooltip{width:224px; position:absolute; z-index:1; display:none;}
+div#bubble_tooltip div#bubble_top{padding:0px; margin:0px; position:relative; background-image: url('/images/template/sales_tooltip_top.gif');	background-repeat:no-repeat;	height:9px;	top:5px;	z-index:3; font-size:1px;}
+#bubble_tooltip div#bubble_middle{padding:0px; margin:0px; position:relative;	background-image: url('/images/template/sales_tooltip_body.gif');	background-repeat:repeat-y;	font-size:1px; z-index:2; }
+#bubble_tooltip div#bubble_middle div#bubble_tooltip_content{padding:0px;	margin-top:-30px;	width:164px;	margin:0px 0px 0px 12px;	padding: 0px 0px 6px 0px;	top:-20px;	font-size:11px;	z-index:5;}
+#bubble_tooltip div#bubble_middle .sidearrow{padding:0px;	margin:0px;	background-image: url('/images/template/sales_tooltip_arrow.gif');	background-repeat:no-repeat;	position:relative;	margin:0px;	top:2px;	right:-188px;	height:45px;	width:62px; font-size:1px; z-index:6; margin-bottom:-50px;}
+#bubble_tooltip div#bubble_middle .close{height:11px;	width:11px;	padding:0px; margin:0px; background-image: url('/images/template/sales_tooltip_close.gif');	background-repeat:no-repeat; position:relative;	margin:0px;	top:5px; left:169px; z-index:7;	cursor: pointer; font-size:1px;	margin-bottom:-11px;}
+#bubble_tooltip div#bubble_bottom{padding:0px;	margin:0px;	background-image: url('/images/template/sales_tooltip_bottom.gif');	background-repeat:no-repeat;	height:12px;	position:relative; top:-6px;	margin-top:6px; font-size:1px;}		
+/*END BUBBLE*/
